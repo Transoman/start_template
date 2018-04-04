@@ -96,7 +96,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('images', function() {
-	return gulp.src('app/img/**/*.{png,jpg,gif}')
+	return gulp.src('app/img/**/*.{png,jpg,gif,ico}')
 		.pipe(imagemin([
 			imagemin.optipng({optimizationLevel: 3}),
 			imagemin.jpegtran({progressive: true})
@@ -120,7 +120,7 @@ gulp.task('build', ['clean', 'styles', 'images', 'svg'], function(){
 	gulp.src(['app/js/**/*'])
 		.pipe(gulp.dest('dist/js'));
 
-	gulp.src(['app/img/symbols.svg'])
+	gulp.src(['app/img/symbols.html'])
 		.pipe(gulp.dest('dist/img'));
 
 	gulp.src(['app/*.html'])
