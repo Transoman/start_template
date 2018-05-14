@@ -1,7 +1,7 @@
 var gulp         = require('gulp'),
 		sass         = require('gulp-sass'), // Sass компілятор в css
+		sourcemaps   = require('gulp-sourcemaps'),
 		concat       = require('gulp-concat'), // З'єднує (конкатенує) файли
-		spritesmith  = require('gulp.spritesmith'), // Генерація спрайта
 		autoprefixer = require('autoprefixer'), // PostCss autoprefixer - автоматично формує вендорні префікси
 		cssmin       = require('gulp-cssmin'), // Мініфікація css
 		rename       = require('gulp-rename'), // Перейменування файлу
@@ -32,14 +32,16 @@ gulp.task('browser-sync', function() {
 gulp.task('styles', function() {
 	return gulp.src('app/sass/style.sass')
 	.pipe(plumber())
+	.pipe(sourcemaps.init())
 	.pipe(sass({outputStyle: 'nested'}).on('error', notify.onError()))
+	.pipe(sourcemaps.write())
 	.pipe(postcss([
 			autoprefixer({
 				browsers: ['last 15 versions'],
 				cascade: false
 			}),
 			mqpacker({
-				sort: true
+				// sort: true
 			})
 		]))
 	.pipe(gulp.dest('app/css'))
@@ -48,19 +50,6 @@ gulp.task('styles', function() {
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream());
 });
-
-gulp.task('sprite', function() {
-	var spriteData = gulp.src('app/img/sprite/*.png')
-		.pipe(spritesmith({
-		/* this whole image path is used in css background declarations */
-		imgName: 'sprite.png',
-		cssName: 'sprite.sass',
-		padding: 2
-		}));
-	spriteData.img.pipe(gulp.dest('app/img'));
-	spriteData.css.pipe(gulp.dest('app/sass'));
-});
-
 
 gulp.task('symbols', function() {
 	return gulp.src('app/img/icon/*.svg')
@@ -90,7 +79,7 @@ gulp.task('watch', function() {
 });
 
 
-/* Project transfer to prodaction */
+/* Project transfer to production */
 gulp.task('clean', function() {
 	return del.sync('dist');
 });
