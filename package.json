@@ -9,6 +9,7 @@
     "css-mqpacker": "^6.0.2",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
     "gulp-cheerio": "^0.6.3",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
@@ -21,7 +22,8 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svgmin": "^1.2.4",
     "gulp-svgstore": "^6.1.1",
-    "run-sequence": "^2.2.1"
+    "run-sequence": "^2.2.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

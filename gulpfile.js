@@ -15,6 +15,8 @@ var gulp         = require('gulp'),
 		plumber      = require('gulp-plumber'), // Відслідковування і вивід в консоль помилок
 		notify       = require("gulp-notify"), // Вивід повідомлення про помилку
 		cheerio      = require('gulp-cheerio'),
+		browserify = require('browserify'),
+		source = require('vinyl-source-stream'),
 		browserSync  = require('browser-sync').create(); // Сервер
 
 // Static server
@@ -49,6 +51,14 @@ gulp.task('styles', function() {
 	.pipe(rename({suffix: '.min'}))
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream());
+});
+
+gulp.task('browserify', function() {
+	return browserify('app/js/scripts.js')
+		.bundle()
+		// Передаем имя файла, который получим на выходе, vinyl-source-stream
+		.pipe(source('scripts.min.js'))
+		.pipe(gulp.dest('app/js'));
 });
 
 gulp.task('symbols', function() {
