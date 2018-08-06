@@ -39,7 +39,7 @@ gulp.task('styles', function() {
 	.pipe(sourcemaps.write())
 	.pipe(postcss([
 			autoprefixer({
-				browsers: ['last 15 versions'],
+				browsers: ['last 5 versions'],
 				cascade: false
 			}),
 			mqpacker({
@@ -51,6 +51,24 @@ gulp.task('styles', function() {
 	.pipe(rename({suffix: '.min'}))
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream());
+});
+
+gulp.task('js', function() {
+	return gulp.src('app/js/common.js')
+	.pipe(plumber())
+	.pipe(uglify())
+	.pipe(rename({suffix: '.min'}))
+	.pipe(gulp.dest('app/js'))
+	.pipe(browserSync.stream());
+});
+
+gulp.task('script', function() {
+	return gulp.src([
+			'app/libs/jQuery/dist/jquery.min.js'
+		])
+	.pipe(concat('script.js'))
+	// .pipe(uglify())
+	.pipe(gulp.dest('app/js/'));
 });
 
 gulp.task('browserify', function() {
@@ -85,7 +103,7 @@ gulp.task('symbols', function() {
 gulp.task('watch', function() {
 	gulp.watch('app/sass/**/*.sass', ['styles']);
 	gulp.watch('app/*.html').on("change", browserSync.reload);
-	gulp.watch('app/js/common.js').on("change", browserSync.reload);
+	gulp.watch('app/js/common.js', ['js']);
 });
 
 
