@@ -14,3 +14,10 @@
 			src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype')
 		@else
 			src: url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.woff') format('woff')
+
+@mixin size($a, $b: false)
+	width: $a
+	@if $b
+		height: $b
+	@else
+		height: $a
