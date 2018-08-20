@@ -1,0 +1,39 @@
+<div id="callback" class="modal">
+  <button class="callback_close modal__close">
+    Close
+    <span class="modal__close-line"></span>
+  </button>
+  <h3>Обратный звонок</h3>
+  <p>Заполните форму и наш менеджер свяжется с вами в течение 5 минут</p>
+
+  <form action="sendmail.php" class="row form callback-form" method="post">
+
+    <input type="hidden" name="subject" value="Обратный звонок">
+
+    <div class="col-sm-12 form-group">
+      <input type="text" class="form__field" name="name" placeholder="Ваше имя" required>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <input type="tel" name="phone" class="form__field" required placeholder="+7 (___) ___-__-__" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <input type="submit" class="btn form__btn" name="submit" value="Заказать звонок">
+    </div>
+
+  </form>
+</div>
+
+<div id="thanks" class="modal">
+  <button class="thanks_close modal__close">
+    Close
+    <span class="modal__close-line"></span>
+  </button>
+  <h3>Спасибо за заказ</h3>
+  <p>Скоро мы Вам перезвоним!</p>
+</div>
+
+<link rel="stylesheet" href="css/style.min.css">
+<script src="js/script.js"></script>
+<script src="js/common.min.js"></script>

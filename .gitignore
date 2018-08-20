@@ -1,5 +1,7 @@
 node_modules/
 dist/
+build/
+app/css
 .DS_Store
 Thumbs.db
 .idea
@@ -8,3 +10,4 @@ Thumbs.db
 *.psd
 *.ai
 *.pdf
+yarn.lock
