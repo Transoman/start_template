@@ -6,12 +6,12 @@
   "devDependencies": {
     "autoprefixer": "^8.5.0",
     "browser-sync": "^2.24.4",
-    "css-mqpacker": "^6.0.2",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-cheerio": "^0.6.3",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.1",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
@@ -24,6 +24,7 @@
     "gulp-svg-sprite": "^1.4.0",
     "gulp-svgmin": "^1.2.4",
     "gulp-svgstore": "^6.1.1",
+    "gulp-uglify": "^3.0.1",
     "run-sequence": "^2.2.1"
   },
   "scripts": {
