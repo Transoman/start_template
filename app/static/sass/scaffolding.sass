@@ -1,0 +1,72 @@
+*,
+*:before,
+*:after
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+/* Clearfix for float elements */
+.clearfix:before,
+.clearfix:after
+	content: ''
+	display: table
+
+.clearfix:after 
+	clear: both
+
+.clearfix
+	zoom: 1 /* For IE 6/7 hasLayout */
+
+
+/* Common styles */
+body
+	margin: 0
+	padding: 0
+	min-width: 320px
+	font-family: $main-font
+	font-size: 14px
+	line-height: 1.6
+	color: $main-color
+
+img
+	max-width: 100%
+	height: auto
+
+/* Hidden element */
+.visually-hidden
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	padding: 0
+	border: 0
+	clip: rect(0 0 0 0)
+	overflow: hidden
+
+/* Buttons */
+.btn
+	display: inline-block
+	vertical-align: middle
+	padding: 10px 15px
+	font-family: $main-font
+	font-size: 16px
+	font-weight: 700
+	color: #fff
+	text-align: center
+	background-color: $accent
+	border: 0
+	outline: none
+	text-decoration: none
+	cursor: pointer
+	user-select: none
+	transition: all .25s ease
+	text-transform: uppercase
+	&:hover
+		background-color: lighten($accent, 5%)
+	&:active
+		background-color: darken($accent, 5%)
+		color: rgba(255,255,255,.3)
+	&[disabled]
+		background-color: #e5e5e5
+		cursor: not-allowed
+		color: #fff
