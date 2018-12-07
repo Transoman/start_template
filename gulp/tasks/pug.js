@@ -1,4 +1,4 @@
-let gp = require('gulp-load-plugins')(),
+let gp = require('gulp-load-plugins')();
     // plumber = require('gulp-plumber'),
     // pug = require('gulp-pug'),
     // pugInheritance = require('gulp-pug-inheritance'),

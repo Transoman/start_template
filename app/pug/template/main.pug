@@ -6,9 +6,7 @@ html(lang="ru-RU")
   head
     meta(charset="utf-8")
     title #{title}
-    <!--[if IE]>
-    meta(http-equiv='X-UA-Compatible', content="IE = edge")
-    <![endif]-->
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
     meta(name="viewport" content="width=device-width,initial-scale=1")
     meta(name="format-detection" content="telephone=no")
     meta(name="keywords" content="")
@@ -23,7 +21,6 @@ html(lang="ru-RU")
       .content
         block content
       include ../modules/footer/footer
-    script(src="static/js/jquery-3.3.1.min.js")
     script(src="static/js/libs.min.js")
-    script(src="static/js/main.js")
+    script(src="static/js/common.js")
     block script

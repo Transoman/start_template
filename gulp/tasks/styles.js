@@ -14,7 +14,7 @@ let gp = require('gulp-load-plugins')(),
 module.exports = function () {
     $.gulp.task('styles:dev', () => {
         return $.gulp.src(stylesPATH.input + 'style.sass')
-            .pipe(gpplumber())
+            .pipe(gp.plumber())
             .pipe(gp.sourcemaps.init())
             .pipe(gp.sass({outputStyle: 'nested'}).on('error', gp.notify.onError()))
             .pipe(gp.postcss([
