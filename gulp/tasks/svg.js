@@ -1,8 +1,4 @@
 let gp = require('gulp-load-plugins')(),
-    // svgSprite = require('gulp-svg-sprite'),
-    // svgmin = require('gulp-svgmin'),
-    // cheerio = require('gulp-cheerio'),
-    // replace = require('gulp-replace'),
     svgPath = {
         "input": "./app/static/images/svg/*.svg",
         "output": "./build/static/images/svg/"

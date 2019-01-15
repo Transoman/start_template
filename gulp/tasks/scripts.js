@@ -1,6 +1,4 @@
 let gp = require('gulp-load-plugins')(),
-    // uglify = require('gulp-uglify'),
-    // concat = require('gulp-concat'),
     scriptsPATH = {
         "input": "./app/static/js/",
         "ouput": "./build/static/js/"

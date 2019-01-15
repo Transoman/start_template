@@ -1,11 +1,5 @@
 let gp = require('gulp-load-plugins')(),
-    // plumber = require('gulp-plumber'),
-    // scss = require('gulp-sass'),
     autoprefixer = require('autoprefixer')
-    // csso = require('gulp-csso'),
-    // csscomb = require('gulp-csscomb'),
-    // sourcemaps = require('gulp-sourcemaps'),
-    // rename = require('gulp-rename'),
     stylesPATH = {
         "input": "./app/static/sass/",
         "ouput": "./build/static/css/"
@@ -29,7 +23,7 @@ module.exports = function () {
             .on('end', $.browserSync.reload);
     });
     $.gulp.task('styles:build', () => {
-        return $.gulp.src(stylesPATH.input + 'styles.scss')
+        return $.gulp.src(stylesPATH.input + 'style.sass')
             .pipe(gp.sass())
             .pipe(gp.postcss([
                 autoprefixer({
@@ -41,7 +35,7 @@ module.exports = function () {
             .pipe($.gulp.dest(stylesPATH.ouput))
     });
     $.gulp.task('styles:build-min', () => {
-        return $.gulp.src(stylesPATH.input + 'styles.scss')
+        return $.gulp.src(stylesPATH.input + 'style.sass')
             .pipe(gp.sass())
             .pipe(gp.postcss([
                 autoprefixer({

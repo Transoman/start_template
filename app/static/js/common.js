@@ -15,4 +15,7 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // SVG
+  svg4everybody({});
+
 });
