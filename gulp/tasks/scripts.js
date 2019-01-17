@@ -46,7 +46,7 @@ module.exports = function () {
     $.gulp.task('js:build-min', () => {
         return $.gulp.src([scriptsPATH.input + '*.js',
             '!' + scriptsPATH.input + 'libs.min.js'])
-            .pipe(gp.concat('main.min.js'))
+            .pipe(gp.concat('common.js'))
             .pipe(gp.uglify())
             .pipe($.gulp.dest(scriptsPATH.ouput))
     });

@@ -15,7 +15,7 @@ module.exports = function () {
 
     $.gulp.task('img:build', () => {
         return $.gulp.src(imgPATH.input)
-            .pipe(gp.cache(imagemin([
+            .pipe(gp.cache(gp.imagemin([
                 gp.imagemin.gifsicle({interlaced: true}),
                 gp.imagemin.jpegtran({progressive: true}),
                 imageminJpegRecompress({

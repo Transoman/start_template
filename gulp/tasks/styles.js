@@ -45,7 +45,7 @@ module.exports = function () {
             ]))
             .pipe(gp.csscomb())
             .pipe(gp.csso())
-            .pipe(gp.rename('style.min.css'))
+            .pipe(gp.rename('styles.min.css'))
             .pipe($.gulp.dest(stylesPATH.ouput))
     });
 };
