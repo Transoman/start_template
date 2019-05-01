@@ -1,11 +1,15 @@
 {
   "name": "Start-template",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "",
   "main": "index.js",
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "autoprefixer": "^9.4.5",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.26.3",
+    "browserify": "^16.2.3",
     "del": "^3.0.0",
     "gulp": "4.0",
     "gulp-cache": "^1.1.0",
@@ -33,7 +37,9 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-uglify": "^3.0.1",
     "imagemin-jpeg-recompress": "^6.0.0",
-    "imagemin-pngquant": "^6.0.0"
+    "imagemin-pngquant": "^6.0.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -44,7 +50,6 @@
     "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
     "jquery-popup-overlay": "^2.1.0",
-    "jquery-validation": "^1.19.0",
     "svg4everybody": "^2.1.9"
   }
 }

@@ -17,6 +17,7 @@ module.exports = function () {
                     cascade: false
                 })
             ]))
+            .pipe(gp.groupCssMediaQueries())
             .pipe(gp.sourcemaps.write())
             .pipe(gp.rename('styles.min.css'))
             .pipe($.gulp.dest(stylesPATH.ouput))
@@ -31,6 +32,7 @@ module.exports = function () {
                     cascade: false
                 })
             ]))
+            .pipe(gp.groupCssMediaQueries())
             .pipe(gp.csscomb())
             .pipe($.gulp.dest(stylesPATH.ouput))
     });
@@ -43,6 +45,7 @@ module.exports = function () {
                     cascade: false
                 })
             ]))
+            .pipe(gp.groupCssMediaQueries())
             .pipe(gp.csscomb())
             .pipe(gp.csso())
             .pipe(gp.rename('styles.min.css'))

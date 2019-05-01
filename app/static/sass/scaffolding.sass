@@ -19,14 +19,19 @@
 
 
 /* Common styles */
+html
+  height: 100%
+
 body
   margin: 0
   padding: 0
+  height: 100%
   min-width: 320px
   font-family: $main-font
   font-size: 14px
   line-height: 1.6
   color: $main-color
+  overflow-x: hidden
 
 img
   max-width: 100%
@@ -70,3 +75,11 @@ img
     background-color: #e5e5e5
     cursor: not-allowed
     color: #fff
+
+.wrapper
+  display: flex
+  flex-direction: column
+  height: 100%
+
+.content
+  flex: 1 0 auto
