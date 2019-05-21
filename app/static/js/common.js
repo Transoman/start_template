@@ -1,3 +1,7 @@
+global.jQuery = require('jquery');
+var svg4everybody = require('svg4everybody'),
+popup = require('jquery-popup-overlay');
+
 jQuery(document).ready(function($) {
 
   // Toggle nav menu

@@ -1,5 +1,5 @@
 // Mixin transition
-@mixin transition($property: all, $duration: 0.25s, $timing-function: ease)
+@mixin trans($property: all, $duration: 0.25s, $timing-function: ease)
   transition: $property $duration $timing-function
 
 // Mixin font-face
@@ -14,13 +14,6 @@
       src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype')
     @else
       src: url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.woff') format('woff')
-
-@mixin size($a, $b: false)
-  width: $a
-  @if $b
-    height: $b
-  @else
-    height: $a
 
 @mixin smooth-scroll
   -webkit-overflow-scrolling: touch
@@ -41,3 +34,10 @@
 =rhmin($height)
   @media only screen and (min-height: $height + "px")
     @content
+
+// For Fancybox
+@function max($numbers...)
+  @return m#{a}x(#{$numbers})
+
+@function min($numbers...)
+  @return m#{i}n(#{$numbers})
