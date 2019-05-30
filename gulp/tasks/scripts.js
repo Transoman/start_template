@@ -23,6 +23,7 @@ module.exports = function () {
 
     $.gulp.task('js:build-min', () => {
         return browserify(scriptsPATH.input + 'common.js')
+        .transform(babelify)
         .bundle()
         .pipe(gp.plumber())
         .pipe(source('common.js'))
