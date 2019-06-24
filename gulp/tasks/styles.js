@@ -13,7 +13,6 @@ module.exports = function () {
             .pipe(gp.sass({outputStyle: 'nested'}).on('error', gp.notify.onError()))
             .pipe(gp.postcss([
                 autoprefixer({
-                    browsers: ['last 5 versions'],
                     cascade: false
                 })
             ]))
@@ -28,7 +27,6 @@ module.exports = function () {
             .pipe(gp.sass())
             .pipe(gp.postcss([
                 autoprefixer({
-                    browsers: ['last 5 versions'],
                     cascade: false
                 })
             ]))
@@ -41,7 +39,6 @@ module.exports = function () {
             .pipe(gp.sass())
             .pipe(gp.postcss([
                 autoprefixer({
-                    browsers: ['last 5 versions'],
                     cascade: false
                 })
             ]))
